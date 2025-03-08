@@ -61,13 +61,13 @@ const EmployeeTable = ({ data }) => {
                 <HStack>
                   <MdDelete
                     onClick={() => mutation.mutate(item.id)}
-                    className="cursor-pointer text-gray-400
-                    hover:text-gray-300"
+                    className="cursor-pointer text-red-400
+                    hover:text-red-500"
                     size={20}
                   />
                   <FaRegEdit
-                    className="cursor-pointer text-gray-400
-                    hover:text-gray-300"
+                    className="cursor-pointer text-yellow-400
+                    hover:text-yellow-300"
                     size={20}
                   />
                 </HStack>
