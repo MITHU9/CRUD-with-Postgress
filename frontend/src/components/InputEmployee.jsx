@@ -51,7 +51,7 @@ const InputEmployee = ({ children, type = "add", data }) => {
       //console.log(response);
 
       if (!response.ok) {
-        throw new Error("Something went wrong!");
+        throw new Error(response.message);
       }
       return response.json();
     },

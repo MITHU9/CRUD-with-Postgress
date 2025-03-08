@@ -20,11 +20,15 @@ if (missingFields.length) {
 }
 
 const db = new pg.Pool({
-  user: process.env.PG_USER,
-  host: process.env.PG_HOST,
-  password: process.env.PG_PASSWORD,
-  database: process.env.PG_DATABASE,
-  port: process.env.PG_PORT,
+  // user: process.env.PG_USER,
+  // host: process.env.PG_HOST,
+  // password: process.env.PG_PASSWORD,
+  // database: process.env.PG_DATABASE,
+  // port: process.env.PG_PORT,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 
 db.connect()
