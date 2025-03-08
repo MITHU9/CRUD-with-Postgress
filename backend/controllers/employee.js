@@ -26,7 +26,7 @@ const createEmployee = async (req, res, next) => {
       salary,
     ]);
 
-    res.status(201).json(rows[0]);
+    res.status(201).json({ message: "Employee created successfully" });
   } catch (error) {
     console.error(error);
     return next(errorMiddleware(400, error.message));
