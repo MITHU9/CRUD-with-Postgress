@@ -1,8 +1,9 @@
-import { VStack } from "@chakra-ui/react";
+import { Button, VStack } from "@chakra-ui/react";
 import EmployeeTable from "./components/EmployeeTable";
 import { useQuery } from "@tanstack/react-query";
 import { baseURL } from "../constants/global-variable";
 import InputEmployee from "./components/InputEmployee";
+import { DialogTrigger } from "./components/ui/dialog";
 
 const App = () => {
   const fetchEmployeeDetails = async () => {
@@ -31,7 +32,11 @@ const App = () => {
   return (
     <div className="flex justify-center items-center h-screen">
       <VStack gap="6" align="flex-start">
-        <InputEmployee />
+        <InputEmployee>
+          <DialogTrigger asChild>
+            <Button variant="outline">Add Employee </Button>
+          </DialogTrigger>
+        </InputEmployee>
         <EmployeeTable data={data} />
       </VStack>
     </div>

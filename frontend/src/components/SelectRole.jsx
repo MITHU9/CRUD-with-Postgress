@@ -18,7 +18,7 @@ const SelectRole = ({ setInfo }) => {
     >
       <SelectLabel>Select Role</SelectLabel>
       <SelectTrigger>
-        <SelectValueText placeholder="Select movie" />
+        <SelectValueText placeholder="Select role" />
       </SelectTrigger>
       <SelectContent className="select">
         {roles.items.map((role) => (

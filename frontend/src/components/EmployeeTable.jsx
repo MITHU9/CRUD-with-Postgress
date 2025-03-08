@@ -5,6 +5,8 @@ import { useMutation } from "@tanstack/react-query";
 import { baseURL } from "../../constants/global-variable";
 import toast from "react-hot-toast";
 import { queryClient } from "../utils/queryClient";
+import InputEmployee from "./InputEmployee";
+import { DialogTrigger } from "./ui/dialog";
 
 const EmployeeTable = ({ data }) => {
   const mutation = useMutation({
@@ -65,11 +67,15 @@ const EmployeeTable = ({ data }) => {
                     hover:text-red-500"
                     size={20}
                   />
-                  <FaRegEdit
-                    className="cursor-pointer text-yellow-400
+                  <InputEmployee type="edit" data={item}>
+                    <DialogTrigger asChild>
+                      <FaRegEdit
+                        className="cursor-pointer text-yellow-400
                     hover:text-yellow-300"
-                    size={20}
-                  />
+                        size={20}
+                      />
+                    </DialogTrigger>
+                  </InputEmployee>
                 </HStack>
               </Table.Cell>
             </Table.Row>

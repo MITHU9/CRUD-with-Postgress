@@ -14,6 +14,8 @@ const createEmployee = async (req, res, next) => {
   try {
     const { name, email, age, role, salary } = req.body;
 
+    //console.log(req.body);
+
     if (!name || !email || !age || !salary) {
       return next(errorMiddleware(400, "All fields are required"));
     }
